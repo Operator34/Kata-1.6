@@ -1,0 +1,198 @@
+$backgroundWhite: #f8f8f8;
+$lightGrey: #eaeaea;
+$buttonShadowColor: #ff3e79;
+$fontGray: #7e7e82;
+
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+.main-container {
+  .container-main-block {
+    min-width: 320px;
+    background-color: $backgroundWhite;
+    max-width: 1121px;
+
+    .container-main-block__header {
+      font-size: 16px;
+      text-align: left;
+      color: $fontGray;
+      text-transform: uppercase;
+      line-height: 24px;
+      padding: 16px 0;
+      border-radius: 5px;
+      background-image: linear-gradient(
+        90deg,
+        $backgroundWhite 0%,
+        #ffffff 98.61%
+      );
+    }
+    .container-main-block-slider {
+      .swiper-brands {
+        min-height: 120px;
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          top: 0;
+          right: 0;
+          width: 40px;
+          height: 70px;
+          z-index: 10;
+          background: linear-gradient(
+            270deg,
+            $backgroundWhite 16.84%,
+            rgba(248, 248, 248, 0.0001) 100%
+          );
+        }
+        .swiper-wrapper {
+          .swiper-slide {
+            .element-slider {
+              // width: 224px;
+              height: 72px;
+              background-color: #fff;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              .element__logo {
+                margin-left: 16px;
+              }
+              .element__button {
+                width: 40px;
+                margin-left: auto;
+                margin-right: 16px;
+                height: 40px;
+                border: none;
+                border-radius: 50%;
+                background-color: #ffffff;
+                background-image: url(../img/slader_button.svg);
+                cursor: pointer;
+                &:hover {
+                  box-shadow: 0 0 10px $buttonShadowColor;
+                }
+              }
+            }
+          }
+        }
+        .swiper-pagination-bullet-active {
+          background-color: #b5b6bc;
+        }
+        .swiper-pagination-bullet {
+          background-color: #dddddd;
+          width: 12px;
+          height: 12px;
+        }
+        .read-more,
+        .hidden-more {
+          margin-top: 24px;
+          .button-read-more {
+            border: none;
+            background-color: transparent;
+            &:hover {
+              transform: scale(1.1);
+            }
+            .button-read-more__image {
+              margin-left: 5px;
+            }
+            .button-read-more__text {
+              margin-left: 8px;
+              font-size: 16px;
+              line-height: 24px;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .swiper-brands__hidden-more,
+  .swiper-brands__read-more {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1121px) {
+  .main-container {
+    .container-main-block {
+      .container-main-block-slider {
+        .swiper-brands {
+          &:after {
+            display: none;
+          }
+          .swiper-wrapper {
+            gap: 16px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+            .hidden {
+              display: none;
+            }
+            .show {
+              display: block !important;
+            }
+            .swiper-brands__swiper-slide {
+              min-width: 224px;
+              height: 72px;
+              position: static;
+              flex-basis: calc(33.33% - 16px);
+              &:nth-last-child(-n + 5) {
+                display: none;
+              }
+            }
+          }
+          .swiper-pagination {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1121px) {
+  .main-container {
+    .container-main-block {
+      .container-main-block-slider {
+        margin: 0;
+        .swiper-brands {
+          // width: 950px;
+          &:after {
+            display: none;
+          }
+          .swiper-wrapper {
+            row-gap: 16px;
+            column-gap: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+            .swiper-brands__swiper-slide {
+              width: 224px;
+              height: 72px;
+              position: static;
+              flex-basis: calc(25% - 24px);
+              &:nth-last-child(-n + 3) {
+                display: none;
+              }
+            }
+            .show {
+              display: block !important;
+            }
+            .hidden {
+              display: none;
+            }
+          }
+          .swiper-pagination {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
