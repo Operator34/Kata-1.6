@@ -1,0 +1,173 @@
+$backgroundWhite: #f8f8f8;
+$lightGrey: #eaeaea;
+$blackColorText: #1b1c21;
+$buttonShadowColor: #ff3e79;
+$greyColorText: #7e7e82;
+$allocator: #41f6d7;
+
+// @font-face {
+//     font-family: "TT Lakes";
+//     src: url(font/TTLakes/TTLakesCondensed-Regular.eot) format("eot"),
+//         url(font/TTLakes/TTLakesCondensed-Regular.woff) format("woff"),
+//         url(font/TTLakes/TTLakesCondensed-Regular.ttf) format("truetype");
+//     font-weight: 400;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: "TT Lakes Bold";
+//     src: url(font/TTLakes/TTLakes-Bold.woff) format("woff"),
+//         url(font/TTLakes/TTLakes-Bold.eot) format("eot"),
+//         url(font/TTLakes/TTLakes-Bold.ttf) format("truetype");
+// }
+// * {
+//     margin: 0;
+//     padding: 0;
+// }
+.window-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  font-family: 'TT Lakes';
+  width: 320px;
+  height: 100vh;
+  max-height: 1024px;
+  box-shadow: 20px 0 55px #0e185033;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .header-mobile-menu {
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    .header-mobile-menu__button-close {
+      margin-left: 24px;
+      background-image: url(../img/header_icon_close.svg);
+    }
+    .header-mobile-menu__button-search {
+      margin-right: 24px;
+      background-image: url(../img/header_icon_search.svg);
+    }
+    .header-mobile-menu__logo-img {
+      margin-right: 64px;
+    }
+  }
+  .menu {
+    flex: 1 1 auto;
+    .burger-menu {
+      .list-menu-items {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .list-menu-items__item {
+          &:first-child {
+            margin-top: 8px;
+          }
+          .list-menu-items__link {
+            text-decoration: none;
+            color: $blackColorText;
+            font-size: 16px;
+            font-weight: 700;
+            margin-left: 24px;
+            font-family: 'TT Lakes';
+            line-height: 24px;
+            &:before {
+              content: '';
+              position: absolute;
+              width: 4px;
+              height: 32px;
+              background-color: $allocator;
+              border-radius: 0 4px 4px 0;
+              left: -4px;
+            }
+            &:hover {
+              color: $greyColorText;
+              &::before {
+                transform: translateX(4px) translateY(-4px);
+                transition-duration: 0.5s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    margin-top: 20px;
+    background-color: #fff;
+    .menu-contact {
+      display: flex;
+      flex-direction: column;
+      margin-left: 24px;
+      margin-top: auto;
+      gap: 16px;
+      .call-chat-profile {
+        display: flex;
+        gap: 16px;
+        .call-chat-profile__button-call {
+          background-image: url(../img/header_icon_call.svg);
+        }
+        .call-chat-profile__button-chat {
+          background-image: url(../img/header_icon_chat.svg);
+        }
+        .call-chat-profile__button-profile {
+          background-image: url(../img/header_icon_profile.svg);
+        }
+      }
+      .menu-contact__mail {
+        font-size: 16px;
+        text-decoration: none;
+        color: $blackColorText;
+        font-family: 'TT Lakes';
+        font-weight: 700;
+      }
+      .menu-contact__tel {
+        font-family: 'TT Lakes Bold';
+        color: $blackColorText;
+        margin-top: -4px;
+        font-size: 24px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+    }
+    .choose-lang {
+      margin: 40px 0 24px 24px;
+      display: flex;
+      list-style: none;
+      .choose-lang__input-radio {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        &:checked + .choose-lang__label {
+          color: $greyColorText;
+        }
+      }
+      .choose-lang__label {
+        color: $blackColorText;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+  .buttons-header {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    &:hover {
+      box-shadow: 0 0 10px #ff3e79;
+    }
+  }
+}
+
+@media (max-width: 1088px) {
+  .wrapper-main-container {
+    .hidden {
+      display: none;
+    }
+  }
+}

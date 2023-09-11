@@ -270,7 +270,7 @@ $greyColorText: #7e7e82;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   .main-container {
     .header {
       .navigation {
@@ -384,10 +384,10 @@ $greyColorText: #7e7e82;
   }
 }
 
-@media (min-width: 1120px) {
+@media (min-width: 1440px) {
   .main-container {
-    max-width: 1120px;
-    margin: 0 auto;
+    margin-left: 320px;
+    // margin: 0 auto;
     .header {
       .navigation {
         display: none;
