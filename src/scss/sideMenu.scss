@@ -5,25 +5,8 @@ $buttonShadowColor: #ff3e79;
 $greyColorText: #7e7e82;
 $allocator: #41f6d7;
 
-// @font-face {
-//     font-family: "TT Lakes";
-//     src: url(font/TTLakes/TTLakesCondensed-Regular.eot) format("eot"),
-//         url(font/TTLakes/TTLakesCondensed-Regular.woff) format("woff"),
-//         url(font/TTLakes/TTLakesCondensed-Regular.ttf) format("truetype");
-//     font-weight: 400;
-//     font-style: normal;
-// }
-// @font-face {
-//     font-family: "TT Lakes Bold";
-//     src: url(font/TTLakes/TTLakes-Bold.woff) format("woff"),
-//         url(font/TTLakes/TTLakes-Bold.eot) format("eot"),
-//         url(font/TTLakes/TTLakes-Bold.ttf) format("truetype");
-// }
-// * {
-//     margin: 0;
-//     padding: 0;
-// }
 .window-menu {
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -168,6 +151,18 @@ $allocator: #41f6d7;
   .wrapper-main-container {
     .hidden {
       display: none;
+    }
+  }
+}
+@media (min-width: 1088px) {
+  .window-menu {
+    .header-mobile-menu {
+      .header-mobile-menu__button-close {
+        display: none;
+      }
+      .header-mobile-menu__logo-img {
+        margin-left: 22px;
+      }
     }
   }
 }

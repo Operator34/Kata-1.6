@@ -26,6 +26,7 @@ const descriptionForTablet = document.querySelector(
 const descriptionForDesktop = document.querySelector(
   '.description-read-more__for-desktop'
 )
+const mainContainer = document.querySelector('.main-container')
 
 buttonDescriptionReadMore.addEventListener('click', function (evt) {
   console.log('buttonDescriptionReadMore')
@@ -302,3 +303,61 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 //---------------------------
+// Сайд меню
+//Открыть side-menu и добавить  blur к main-container
+const sideMenu = document.querySelector('.window-menu')
+const buttonSideOpen = document.querySelector('.menu-logo__button-menu')
+const buttonSideClose = document.querySelector(
+  '.header-mobile-menu__button-close'
+)
+console.log(buttonSideOpen)
+const openSideMenu = () => {
+  sideMenu.classList.remove('hidden')
+  mainContainer.classList.add('blur')
+}
+const closeSideMenu = () => {
+  sideMenu.classList.add('hidden')
+  mainContainer.classList.remove('blur')
+}
+
+document.addEventListener('click', function (evt) {
+  console.log(sideMenu.contains(evt.target))
+  console.log(buttonSideOpen.contains(evt.target))
+  if (!sideMenu.contains(evt.target) && !buttonSideOpen.contains(evt.target)) {
+    closeSideMenu()
+  }
+})
+
+buttonSideOpen.addEventListener('click', openSideMenu)
+buttonSideClose.addEventListener('click', closeSideMenu)
+
+// Модальное окно обратная связь
+const modalFeedback = document.querySelector('.modal-feedback')
+const buttonSideMenuFeedback = document.querySelector('.modal-button-feedback')
+const buttonHeaderMenuFeedback = document.querySelector(
+  '.modal-feedback-button-close'
+)
+const buttonModalFeedbackClose = modalFeedback.querySelector(
+  '.modal-header__button-close'
+)
+//Открыть модалку с обратной связью
+const openModalFeedback = () => {
+  modalFeedback.classList.remove('hidden')
+
+  closeSideMenu()
+  mainContainer.classList.add('blur')
+}
+
+//Закрыть модалку с обратной связью
+
+const closeModalFeedback = () => {
+  modalFeedback.classList.add('hidden')
+  mainContainer.classList.remove('blur')
+}
+
+//Слушатели на кнопки для открытия модалки ОС
+buttonSideMenuFeedback.addEventListener('click', openModalFeedback)
+buttonHeaderMenuFeedback.addEventListener('click', openModalFeedback)
+
+//Слушатель на кнопку закрытия обратной связи
+buttonModalFeedbackClose.addEventListener('click', closeModalFeedback)

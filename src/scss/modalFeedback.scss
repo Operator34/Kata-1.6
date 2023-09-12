@@ -1,0 +1,141 @@
+$backgroundWhite: #f8f8f8;
+$lightGrey: #eaeaea;
+$blackColorText: #1b1c21;
+$buttonShadowColor: #ff3e79;
+$greyColorText: #7e7e82;
+$allocator: #41f6d7;
+$laptopSize: 1440px;
+
+.buttons-header {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  &:hover {
+    box-shadow: 0 0 10px #ff3e79;
+  }
+}
+
+.modal-feedback {
+  width: 320px;
+  background-color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 12;
+  @media (min-width: $laptopSize) {
+    width: 440px;
+    box-shadow: -20px 0 55px #0e185033;
+  }
+  .modal-header {
+    height: 88px;
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .modal-header__button-close {
+      @media (min-width: $laptopSize) {
+        position: absolute;
+        left: -88px;
+      }
+      margin-left: 16px;
+      background-image: url(../img/header_icon_close.svg);
+    }
+  }
+  .modal-main {
+    @media (min-width: $laptopSize) {
+      position: relative;
+      top: -64px;
+    }
+    .main-header {
+      display: flex;
+      align-items: center;
+
+      .main-header__header {
+        display: flex;
+        align-items: center;
+        .main-header__highlight {
+          width: 4px;
+          height: 40px;
+          background-color: #41f6d7;
+          border-radius: 0 4px 4px 0;
+        }
+        .main-header__topic {
+          font-family: 'TT Lakes Bold';
+          font-size: 24px;
+          line-height: 40px;
+          text-align: left;
+          margin-left: 12px;
+        }
+      }
+    }
+    .modal-feedback-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 16px;
+      margin: 16px;
+
+      .modal-feedback-form__item {
+        min-width: 288px;
+        @media (min-width: $laptopSize) {
+          min-width: 376px;
+        }
+        height: 48px;
+        padding-left: 16px;
+
+        border: 1px solid $lightGrey;
+        border-radius: 5px;
+      }
+      .modal-feedback-form__item-message {
+        min-width: 288px;
+        @media (min-width: $laptopSize) {
+          min-width: 376px;
+        }
+        height: 118px;
+        padding-left: 16px;
+        padding-top: 12px;
+        border: 1px solid $lightGrey;
+        border-radius: 5px;
+        resize: vertical;
+      }
+      .modal-feedback-form__description-button {
+        display: block;
+        font-family: TT Lakes;
+        font-size: 14px;
+        line-height: 16px;
+
+        .modal-feedback-form__description-button_pink {
+          color: $buttonShadowColor;
+        }
+      }
+      .modal-feedback-form-button {
+        width: 136px;
+        height: 32px;
+        border: none;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 24px;
+        border-radius: 20px;
+        align-self: flex-end;
+        background-color: #ff3e79;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 10px #ff3e79;
+        }
+        img {
+          border: none;
+        }
+        .element-slider__button-image {
+          width: 7px;
+          height: 10px;
+          vertical-align: baseline;
+          border: none;
+        }
+      }
+    }
+  }
+}

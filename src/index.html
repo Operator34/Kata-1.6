@@ -41,7 +41,7 @@
                 aria-label="Позвонить"
               ></button>
               <button
-                class="call-chat-profile__button-chat buttons-header"
+                class="call-chat-profile__button-chat header-button-feedback buttons-header"
                 type="button"
                 aria-label="Написать"
               ></button>
@@ -728,7 +728,7 @@
                 aria-label="Позвонить"
               ></button>
               <button
-                class="call-chat-profile__button-chat buttons-header"
+                class="call-chat-profile__button-chat modal-button-feedback buttons-header"
                 type="button"
                 aria-label="Написать"
               ></button>
@@ -776,6 +776,66 @@
           </ul>
         </footer>
       </aside>
+      <div class="modal-feedback modal hidden">
+        <header class="modal-header">
+          <button
+            class="modal-header__button-close modal-feedback-button-close buttons-header"
+            type="button"
+            aria-label="Закрыть"
+          ></button>
+        </header>
+        <main class="modal-main">
+          <div class="main-header">
+            <div class="main-header__header">
+              <div class="main-header__highlight"></div>
+              <h1 class="main-header__topic">Обратная связь</h1>
+            </div>
+          </div>
+          <form action="#" method="post" class="modal-feedback-form">
+            <input
+              type="text"
+              class="modal-feedback-form__item"
+              placeholder="Имя"
+              aria-placeholder="Введите имя"
+            />
+            <input
+              type="tel"
+              class="modal-feedback-form__item"
+              placeholder="Телефон"
+              aria-placeholder="Введите телефон"
+            />
+            <input
+              type="email"
+              class="modal-feedback-form__item"
+              placeholder="Электронная почта"
+              aria-placeholder="Ввведите электронную почту"
+            />
+            <textarea
+              class="modal-feedback-form__item-message"
+              placeholder="Сообщение"
+              aria-placeholder="Введлите сообщение"
+            ></textarea>
+            <p class="modal-feedback-form__description-button">
+              Нажимая “отправить”, вы даете согласие на
+              <a class="modal-feedback-form__description-button_pink" href="#"
+                >обработку персональных данных</a
+              >
+              и соглашаетесь с нашей
+              <a class="modal-feedback-form__description-button_pink" href="#"
+                >политикой конфиденциальности
+              </a>
+            </p>
+            <button class="modal-feedback-form-button">
+              <span class="modal-feedback-form-button__text">Отправить</span>
+              <img
+                class="modal-feedback-form-button__image"
+                src="../src/img/icon_button-price_dropdown.svg"
+              />
+            </button>
+          </form>
+        </main>
+      </div>
+      <div class="modal-call"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
