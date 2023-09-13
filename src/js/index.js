@@ -213,11 +213,11 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     loop: true,
     freeMode: true,
-    slidesPerView: 1.2,
+    slidesPerView: 1.3,
     spaceBetween: 16,
     breakpoints: {
       320: {
-        slidesPerView: 1.2
+        slidesPerView: 1.3
       },
       420: {
         slidesPerView: 1.5
@@ -246,11 +246,11 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     loop: true,
     freeMode: true,
-    slidesPerView: 1.2,
+    slidesPerView: 1.3,
     spaceBetween: 16,
     breakpoints: {
       320: {
-        slidesPerView: 1.2
+        slidesPerView: 1.3
       },
       420: {
         slidesPerView: 1.5
@@ -290,13 +290,13 @@ window.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 1.5
       },
       520: {
-        slidesPerView: 2
+        slidesPerView: 1.8
       },
       620: {
-        slidesPerView: 2.5
+        slidesPerView: 2.2
       },
       720: {
-        slidesPerView: 3
+        slidesPerView: 2.6
       }
     }
   })
@@ -342,6 +342,7 @@ const buttonModalFeedbackClose = modalFeedback.querySelector(
 const openModalFeedback = () => {
   modalFeedback.classList.remove('hidden')
   closeSideMenu()
+  closeModalCall()
   mainContainer.classList.add('blur')
 }
 

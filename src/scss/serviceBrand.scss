@@ -48,7 +48,10 @@ $fontGray: #7e7e82;
         .swiper-wrapper {
           .swiper-slide {
             .element-slider {
-              // width: 224px;
+              @media (max-width: 767px) {
+                max-width: 240px;
+              }
+
               height: 72px;
               background-color: #fff;
               border: 1px solid #eaeaea;

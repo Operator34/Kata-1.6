@@ -66,6 +66,7 @@ $greyColorText: #7e7e82;
     flex-direction: column;
     row-gap: 22px;
     .main-header {
+      margin-top: 24px;
       display: flex;
       align-items: center;
       .main-header__header {
@@ -166,6 +167,7 @@ $greyColorText: #7e7e82;
   }
   .container-main-block {
     padding-left: 16px;
+    margin-top: 50px;
   }
   .main-footer {
     background-color: $backgroundWhite;
@@ -200,6 +202,9 @@ $greyColorText: #7e7e82;
 
 @media (max-width: 768px) {
   .main-container {
+    .container-main-block {
+      margin-top: 24px;
+    }
     .header {
       .navigation {
         .menu-logo {
@@ -232,6 +237,7 @@ $greyColorText: #7e7e82;
           display: none;
         }
       }
+
       .side-menu {
         .side-menu__btn {
           &:first-child {
