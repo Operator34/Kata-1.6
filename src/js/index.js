@@ -310,32 +310,30 @@ const buttonSideOpen = document.querySelector('.menu-logo__button-menu')
 const buttonSideClose = document.querySelector(
   '.header-mobile-menu__button-close'
 )
-console.log(buttonSideOpen)
 const openSideMenu = () => {
   sideMenu.classList.remove('hidden')
   mainContainer.classList.add('blur')
+  document.addEventListener('click', listenerSideMenu)
 }
 const closeSideMenu = () => {
   sideMenu.classList.add('hidden')
   mainContainer.classList.remove('blur')
+  document.removeEventListener('click', listenerSideMenu)
 }
-
-document.addEventListener('click', function (evt) {
-  console.log(sideMenu.contains(evt.target))
-  console.log(buttonSideOpen.contains(evt.target))
+const listenerSideMenu = (evt) => {
   if (!sideMenu.contains(evt.target) && !buttonSideOpen.contains(evt.target)) {
     closeSideMenu()
   }
-})
+}
 
 buttonSideOpen.addEventListener('click', openSideMenu)
 buttonSideClose.addEventListener('click', closeSideMenu)
 
-// Модальное окно обратная связь
+// Модальное окно обратная связь------------------------------
 const modalFeedback = document.querySelector('.modal-feedback')
 const buttonSideMenuFeedback = document.querySelector('.modal-button-feedback')
 const buttonHeaderMenuFeedback = document.querySelector(
-  '.modal-feedback-button-close'
+  '.header-button-feedback'
 )
 const buttonModalFeedbackClose = modalFeedback.querySelector(
   '.modal-header__button-close'
@@ -343,7 +341,6 @@ const buttonModalFeedbackClose = modalFeedback.querySelector(
 //Открыть модалку с обратной связью
 const openModalFeedback = () => {
   modalFeedback.classList.remove('hidden')
-
   closeSideMenu()
   mainContainer.classList.add('blur')
 }
@@ -361,3 +358,31 @@ buttonHeaderMenuFeedback.addEventListener('click', openModalFeedback)
 
 //Слушатель на кнопку закрытия обратной связи
 buttonModalFeedbackClose.addEventListener('click', closeModalFeedback)
+//-------------------------------------------------------
+
+//Модальное окно заказать звонок
+
+const modalCall = document.querySelector('.modal-call')
+const buttonModalCallClose = modalCall.querySelector('.modal-call-button-close')
+const buttonCallSideMenu = sideMenu.querySelector(
+  '.call-chat-profile__button-call'
+)
+const buttonCallHeader = mainContainer.querySelector(
+  '.call-chat-profile__button-call'
+)
+
+const openModalCall = () => {
+  modalCall.classList.remove('hidden')
+  closeSideMenu()
+  closeModalFeedback()
+  mainContainer.classList.add('blur')
+}
+
+const closeModalCall = () => {
+  modalCall.classList.add('hidden')
+  mainContainer.classList.remove('blur')
+}
+
+buttonCallHeader.addEventListener('click', openModalCall)
+buttonCallSideMenu.addEventListener('click', openModalCall)
+buttonModalCallClose.addEventListener('click', closeModalCall)

@@ -71,14 +71,14 @@ $laptopSize: 1440px;
         }
       }
     }
-    .modal-feedback-form {
+    .modal-call-form {
       display: flex;
       flex-direction: column;
       align-items: center;
       row-gap: 16px;
       margin: 16px;
 
-      .modal-feedback-form__item {
+      .modal-call-form__item {
         min-width: 288px;
         @media (min-width: $laptopSize) {
           min-width: 376px;
@@ -89,29 +89,17 @@ $laptopSize: 1440px;
         border: 1px solid $lightGrey;
         border-radius: 5px;
       }
-      .modal-feedback-form__item-message {
-        min-width: 288px;
-        @media (min-width: $laptopSize) {
-          min-width: 376px;
-        }
-        height: 118px;
-        padding-left: 16px;
-        padding-top: 12px;
-        border: 1px solid $lightGrey;
-        border-radius: 5px;
-        resize: vertical;
-      }
-      .modal-feedback-form__description-button {
+      .modal-call-form__description-button {
         display: block;
         font-family: TT Lakes;
         font-size: 14px;
         line-height: 16px;
 
-        .modal-feedback-form__description-button_pink {
+        .modal-call-form__description-button_pink {
           color: $buttonShadowColor;
         }
       }
-      .modal-feedback-form-button {
+      .modal-call-form-button {
         width: 136px;
         height: 32px;
         border: none;

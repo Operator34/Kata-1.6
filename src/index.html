@@ -835,7 +835,49 @@
           </form>
         </main>
       </div>
-      <div class="modal-call"></div>
+      <div class="modal-call modal hidden">
+        <header class="modal-header">
+          <button
+            class="modal-header__button-close modal-call-button-close buttons-header"
+            type="button"
+            aria-label="Закрыть"
+          ></button>
+        </header>
+        <main class="modal-main">
+          <div class="main-header">
+            <div class="main-header__header">
+              <div class="main-header__highlight"></div>
+              <h1 class="main-header__topic">Заказать звонок</h1>
+            </div>
+          </div>
+          <form action="#" method="post" class="modal-call-form">
+            <input
+              type="tel"
+              class="modal-call-form__item"
+              placeholder="Телефон"
+              aria-placeholder="Введите телефон"
+            />
+
+            <p class="modal-call-form__description-button">
+              Нажимая “отправить”, вы даете согласие на
+              <a class="modal-feedback-form__description-button_pink" href="#"
+                >обработку персональных данных</a
+              >
+              и соглашаетесь с нашей
+              <a class="modal-call-form__description-button_pink" href="#"
+                >политикой конфиденциальности
+              </a>
+            </p>
+            <button class="modal-call-form-button">
+              <span class="modal-call-form-button__text">Отправить</span>
+              <img
+                class="modal-call-form-button__image"
+                src="../src/img/icon_button-price_dropdown.svg"
+              />
+            </button>
+          </form>
+        </main>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
